@@ -6,6 +6,7 @@ import Insert from './Components/Insert'
 import Search from './Components/Search'
 import Update from './Components/Update'
 import Contact from './Components/Contact'
+import Display from './Components/Display'
 import { BrowserRouter,Routes,Route } from 'react-router-dom'
 
 
@@ -21,6 +22,7 @@ const App = () => {
                                     <Route path="/home" element={<Home/>}/>
                                     <Route path="/about" element={<About/>}/>
                                     <Route path="/insert"element={<Insert/>}/>
+                                    <Route path="/display"element={<Display/>}/>
                                     <Route path="/search"element={<Search/>}/>
                                     <Route path="/update" element={<Update/>}/>
                                     <Route path="/contact" element={<Contact/>}/>

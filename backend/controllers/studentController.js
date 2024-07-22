@@ -1,18 +1,21 @@
-const stuDataSave = async(req,res)=>{
+const stuModel = require("../models/studentModel")
 
-      const stuData = await stuModel.create({
-                rollno:rollno,
-                name:name,
-                city:city,
-                fees:fees
-
-
-
-      })
-
+const stuDatasave = async(req,res)=>{
+    const {rollno , name , city ,fees} = req.body;
+    const stuData = await stuModel.create({
+        rollno:rollno,
+        name:name,
+        city:city,
+        fees:fees
+    
+    })
+    res.status(200).send(stuData)
 }
-
-
+const stuDisplay =async(req,res)=>{
+    const mydata = await stuModel.find()
+    res.status(200).json(mydata)
+}
 module.exports={
-    stuDataSave
+    stuDatasave,
+    stuDisplay
 }

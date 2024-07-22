@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import axios from "axios"
 
 const Insert = () => {
 
@@ -13,12 +14,14 @@ const Insert = () => {
           console.log(input)
         }
 
-        const handleSubmit=()=>{
-          let api="http://localhost:8000/students/stusave"
+        const handleSubmit=(e)=>{
+          e.preventDefault()
+          let api="http://localhost:9000/students/stusave"
           axios.post(api,input).then((res)=>{
             console.log(res)
             alert("data saved")
           })
+          console.log({name:name,city:city,fees:fees,})
 
         }
 

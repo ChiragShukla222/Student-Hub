@@ -1,8 +1,11 @@
-const express = require("express")
+const express= require("express")
 const route = express.Router();
- 
-const stuContollers=require("../controllers/studentController")
-route.post("/stusave",stuContollers.stuDataSave)
+const stuControllers = require("../controllers/studentController")
+route.get("/",(req,res)=>{
+    res.send("student route")
+})
 
+route.post("/stusave",stuControllers.stuDatasave)
+route.get("/studata",stuControllers.stuDisplay)
 
-module.export=route
+module.exports=route

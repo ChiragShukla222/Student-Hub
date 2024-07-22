@@ -1,10 +1,11 @@
 const mongoose = require("mongoose")
 
-const studentSchema =  new mongoose.Schema({
-    rollno:Number,
-    name:String,
-    city:String,
-    fess:Number
+const studentSchmea = new mongoose.Schema({
+        rollno:Number,
+        name:String,
+        city:String,
+        fees:Number
+
 })
 
-module.exports=mongoose.model("student",studentSchema)
+module.exports = mongoose.model("students",studentSchmea)
