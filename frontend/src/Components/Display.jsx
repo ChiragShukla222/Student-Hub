@@ -8,20 +8,24 @@ import Studentdesign from '../Studentdesign';
 const Display = () => {
   const [mydata , setMydata]= useState([])
   const loadData =async()=>{
-    let url= "http://localhost:9000/students/stuDisplay"
-    console.log(response.data)
+    let url= "http://localhost:9000/students/studata"
+    let response= await axios.get(url);
+    // axios.get(url).then((res)=>{
+      console.log(response.data)
     setMydata(response.data)
+    // })
   }
   useEffect(()=>{
     loadData()
   },[])
   
 
-  const ans = mydata.map((key)=><Studentdesign
-        rollno={key.rollno}
-        name={key.name}
-        city={key.city}
-        fees={key.fees}
+  const ans = mydata.map((student)=><Studentdesign
+      key = {student.rollno}
+        rollno={student.rollno}
+        name={student.name}
+        city={student.city}
+        fees={student.fees}
   />)
  
   return (
@@ -30,7 +34,7 @@ const Display = () => {
     <Table striped bordered hover>
       <thead>
         <tr>
-          <th>#</th>
+          
           <th>ROLL-NO </th>
           <th>NAME</th>
           <th>CITY</th>
@@ -38,7 +42,7 @@ const Display = () => {
         </tr>
       </thead>
       <tbody>
-        
+        {ans}
       </tbody>
     </Table>
 
