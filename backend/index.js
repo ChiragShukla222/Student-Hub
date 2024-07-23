@@ -21,6 +21,7 @@ app.use(bodyparser.urlencoded({extended:true}))
 app.use(bodyparser.json())
 
 app.use("/students",stuRoute)
+
 app.listen(PORT,()=>{
     console.log("running on 9000")
 })
