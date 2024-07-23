@@ -7,5 +7,6 @@ route.get("/",(req,res)=>{
 
 route.post("/stusave",stuControllers.stuDatasave)
 route.get("/studata",stuControllers.stuDisplay)
+route.post("/stusearch",stuControllers.stuSearch)
 
 module.exports=route
