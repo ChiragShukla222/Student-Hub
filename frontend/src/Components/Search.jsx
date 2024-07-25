@@ -33,7 +33,7 @@ const Search = () => {
   return (
     <>
    <div className="searchstyle">
-   <h1>search</h1>
+   <h1>Search Student</h1>
     Enter Rollno :<input type="text" value={rollno}
     onChange={(e)=>{setRollno(e.target.value)}}/>
     <br /> <br />
@@ -43,10 +43,10 @@ const Search = () => {
    <Table striped bordered hover>
       <thead>
         <tr>
-          <th>#</th>
-          <th>First Name</th>
-          <th>Last Name</th>
-          <th>Username</th>
+          <th>Rollno</th>
+          <th> Name</th>
+          <th>City</th>
+          <th>Fees</th>
         </tr>
       </thead>
       <tbody>
