@@ -6,7 +6,9 @@ import Insert from './Components/Insert'
 import Search from './Components/Search'
 import Update from './Components/Update'
 import Contact from './Components/Contact'
+import Login from "./Components/Login"
 import Display from './Components/Display'
+import Regis from './Components/Regis'
 import { BrowserRouter,Routes,Route } from 'react-router-dom'
 
 
@@ -26,6 +28,8 @@ const App = () => {
                                     <Route path="/search"element={<Search/>}/>
                                     <Route path="/update" element={<Update/>}/>
                                     <Route path="/contact" element={<Contact/>}/>
+                                    <Route path="/login " element={<Login/>}/>
+                                    <Route path="/regis" element={<Regis/>}/>
                                     
 
                                 </Route>

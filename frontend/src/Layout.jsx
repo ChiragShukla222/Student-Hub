@@ -17,7 +17,8 @@ const Layout = () => {
             <Nav.Link as={Link} to ="update">Update</Nav.Link>
             <Nav.Link as={Link} to ="contact">Contact</Nav.Link>
             <Nav.Link as={Link} to ="search">Search</Nav.Link>
-
+            <Nav.Link as={Link} to ="login">Login</Nav.Link>
+            <Nav.Link as={Link} to ="regis">Registration</Nav.Link>
             
           </Nav>
         </Container>

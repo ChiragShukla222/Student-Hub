@@ -4,7 +4,7 @@ import Form from 'react-bootstrap/Form';
 import axios from "axios"
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+import {message} from "antd"
 
 const Insert = () => {
 
@@ -23,9 +23,11 @@ const Insert = () => {
           axios.post(api,input).then((res)=>{
             console.log(res)
             // alert("data saved")
-            toast("saved");
+            //toast("saved");
+            message.success("saved",5)
           })
           console.log({name:name,city:city,fees:fees,})
+          
 
         }
 
