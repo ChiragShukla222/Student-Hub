@@ -30,8 +30,27 @@ const stuSearch=async(req,res)=>{
     
     res.status(200).json(myans)
 }
+const stuUpdate =async(req,res)=>{
+    console.log("function call ok")
+    const mydatad = await stuModel.find();
+    res.status(200).json(mydatad)
+
+}
+const stuDelete=async(req,res)=>{
+    console.log("del fucntion called")
+    const myid = req.body.myid;
+    const myres = await stuModel.findByIdAndDelete(myid)
+    res.status(200).json(myres)
+    
+}
+const stuEdit =async(req,res)=>{
+    console.log("edit function ")
+}
 module.exports={
     stuDatasave,
     stuDisplay,
-    stuSearch
+    stuSearch,
+    stuUpdate,
+    stuDelete,
+    stuEdit
 }
