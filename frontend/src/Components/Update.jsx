@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import { useNavigate} from "react-router-dom"
+import { Navigate,useNavigate} from "react-router-dom"
 import axios from "axios"
-import Studentdesign from '../Studentdesign';
+import Table from 'react-bootstrap/Table';
+
 const Update = () => {
   const[mydatad ,setData] = useState([]);
-  let nav = useNavigate();
+  let navigate = useNavigate();
   //navigate is just like an link in the layout but it directs us without clicking on any thing
   const loadData=()=>{
       let api = "http://localhost:9000/students/updatedisplay"
@@ -24,22 +25,26 @@ const Update = () => {
       loadData()
     })
   }
-  const edit=(myid)=>{
-    nav = (`/editdata/${myid}`)
+  const myedit=(myid)=>{
+    navigate = (`/editdata}${myid}`)
+    console.log("edit workig")
   
     //create an new edit component for the edit //
   }
-  const ans =mydatad.map((key)=>{
+  const answer =mydatad.map((edit)=>{
       return(
         <>
             <tr>
-              <td>{key.rollno}</td>
-              <td>{key.name}</td>
-              <td>{key.city}</td>
-              <td>{key.fees}</td>
+              <td>{edit.rollno}</td>
+              <td>{edit.name}</td>
+              <td>{edit.city}</td>
+              <td>{edit.fees}</td>
               <td>
-              <button onClick={()=>{edit(key._id)}}>Edit</button>
-              <button onClick={()=>{myDel(key._id)}}>DEL</button>
+              <button onClick={()=>{myedit(edit._id)}}>Edit</button>
+              {/* <a href="#" onClick={()=>{edit(keys._id)}}>edit
+                 
+                </a> */}
+              <button onClick={()=>{myDel(edit._id)}}>DEL</button>
               </td>
              </tr>
             
@@ -52,17 +57,21 @@ const Update = () => {
   return (
     <>
     <h1>update</h1>
-    <table>
-      <tr>
-        <th>rollno</th>
-        <th>name</th>
-        <th>city</th>
-        <th>fees</th>
-             </tr>
+      <Table striped bordered hover>
+      <thead>
+        <tr>
+          <th>#Roll number</th>
+          <th>Student Name</th>
+          <th>City</th>
+          <th>Total Fees</th>
+          <th>
+          </th>
+        </tr>
+      </thead>
       <tbody>
-        {ans}
-      </tbody>
-    </table>
+      {answer}
+        </tbody>
+        </Table>   
     </>
   )
 }

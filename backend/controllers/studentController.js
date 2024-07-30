@@ -45,6 +45,12 @@ const stuDelete=async(req,res)=>{
 }
 const stuEdit =async(req,res)=>{
     console.log("edit function ")
+    
+    const id =req.body.id;
+
+    const mydatad = await stuModel.findById(id)
+    
+    res.status(200).json(mydatad)
 }
 module.exports={
     stuDatasave,

@@ -9,6 +9,7 @@ import Contact from './Components/Contact'
 import Login from "./Components/Login"
 import Display from './Components/Display'
 import Regis from './Components/Regis'
+import Editdata from "./Components/Editdata"
 import { BrowserRouter,Routes,Route } from 'react-router-dom'
 
 
@@ -29,6 +30,7 @@ const App = () => {
                                     <Route path="/update" element={<Update/>}/>
                                     <Route path="/contact" element={<Contact/>}/>
                                     <Route path="/login " element={<Login/>}/>
+                                    <Route path="/editdata:id" element={<Editdata/>} /> 
                                     <Route path="/regis" element={<Regis/>}/>
                                     
 
