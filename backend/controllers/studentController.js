@@ -14,7 +14,7 @@ const stuDatasave = async(req,res)=>{
 const stuDisplay =async(req,res)=>{
     // console.log("mu ddddd");
     // res.send("hiii")
-
+ 
     const mydata = await stuModel.find()
     res.status(200).json(mydata)
 }
