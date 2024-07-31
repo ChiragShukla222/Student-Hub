@@ -10,6 +10,7 @@ route.get("/studata",stuControllers.stuDisplay)
 route.post("/stusearch",stuControllers.stuSearch)
 route.get("/updatedisplay",stuControllers.stuUpdate)
 route.post("/updatedelete",stuControllers.stuDelete)
-route.post("/editdisplay",stuControllers.stuEdit)
+
+route.post("/editdata",stuControllers.stuEdit)
 
 module.exports=route
